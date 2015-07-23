@@ -1,0 +1,28 @@
+{
+  "name": "starter",
+  "version": "0.0.0",
+  "description": "Test repo for starter template for current stack",
+  "author": "Blaine Bublitz <blaine@iceddev.com> (http://iceddev.com)",
+  "contributors": [],
+  "repository": "phated/starter",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "main": "index.js",
+  "files": [
+    "LICENSE",
+    "index.js"
+  ],
+  "scripts": {
+    "test": "zuul --local",
+    "build": "babel ./src/ --out-dir ./",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^0.23.0",
+    "babel": "^5.5.8"
+  },
+  "keywords": []
+}
