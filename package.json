@@ -15,14 +15,20 @@
     "index.js"
   ],
   "scripts": {
-    "test": "zuul --local",
-    "build": "babel ./src/ --out-dir ./",
+    "test": "zuul test/**/*.js --local --open",
+    "ci": "zuul test/**/*.js --electron",
+    "build": "webpack",
     "prepublish": "npm run build"
   },
   "dependencies": {},
   "devDependencies": {
+    "babel-core": "^5.8.3",
+    "babel-loader": "^5.3.2",
     "eslint": "^0.23.0",
-    "babel": "^5.5.8"
+    "expect": "^1.8.0",
+    "webpack": "^1.10.3",
+    "zuul": "^3.2.0",
+    "zuul-builder-webpack": "^1.1.0"
   },
   "keywords": []
 }
