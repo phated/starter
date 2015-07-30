@@ -17,7 +17,7 @@
   "scripts": {
     "test": "npm run lint && zuul test/**/*.js --local --open",
     "ci": "npm run lint && zuul test/**/*.js --electron",
-    "lint": "eslint ./src/",
+    "lint": "eslint ./src/ ./test/",
     "build": "webpack",
     "serve": "webpack-dev-server",
     "prepublish": "npm run build"
