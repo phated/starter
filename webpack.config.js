@@ -1,6 +1,5 @@
 'use strict';
 
-// TODO: when webpack is fixed, switch to babel
 var path = require('path');
 
 module.exports = {
