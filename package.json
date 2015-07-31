@@ -23,7 +23,7 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "@phated/redux-create-store": "^0.1.0",
+    "@phated/redux-create-store": "^0.1.1",
     "react": "^0.13.3",
     "sovereign": "^0.3.0"
   },
