@@ -1,7 +1,7 @@
 'use strict';
 
 const reducers = {
-  example: require('./example')
+  count: require('./count')
 };
 
 module.exports = reducers;

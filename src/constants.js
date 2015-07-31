@@ -1,7 +1,8 @@
 'use strict';
 
 const constants = {
-  EXAMPLE: 'EXAMPLE'
+  INCREMENT: 'INCREMENT',
+  DECREMENT: 'DECREMENT'
 };
 
 module.exports = constants;
