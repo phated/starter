@@ -4,36 +4,69 @@ var path = require('path');
 
 var webpack = require('webpack');
 
+var isTest = (process.argv.indexOf('--test') !== -1);
+var isProd = (process.argv.indexOf('--prod') !== -1);
+
+var bundle = [
+  path.join(__dirname, './src/index.js')
+];
+var plugins = [];
+var loaders = [{
+  test: /\.js$/,
+  exclude: [
+    /node_modules/
+  ],
+  loader: 'babel-loader'
+}];
+
+// I think order is important for all of these
+if(!isProd && !isTest){
+  bundle.unshift(
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server'
+  );
+
+  plugins.unshift(
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  );
+
+  loaders.unshift({
+    test: /\.js$/,
+    exclude: [
+      /node_modules/
+    ],
+    loader: 'react-hot-loader'
+  });
+}
+
+if(isTest){
+  loaders.push({
+    test: /\.js$/,
+    exclude: [
+      /__tests__/,
+      /node_modules/
+    ],
+    loader: 'isparta-loader'
+  });
+}
+
+if(isProd){
+  // TODO: prod config
+}
+
 module.exports = {
   devtool: 'eval-source-map',
   entry: {
-    bundle: [
-      'webpack-dev-server/client?http://localhost:8080',
-      'webpack/hot/only-dev-server',
-      path.join(__dirname, './src/index.js')
-    ]
+    bundle: bundle
   },
   output: {
     filename: '[name].js',
     path: __dirname
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ],
+  plugins: plugins,
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: [
-          /node_modules/
-        ],
-        loaders: [
-          'react-hot-loader',
-          'babel-loader'
-        ]
-      }
-    ]
+    loaders: loaders
   },
   devServer: {
     hot: true
