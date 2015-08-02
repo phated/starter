@@ -2,14 +2,24 @@
 
 var path = require('path');
 
+var webpack = require('webpack');
+
 module.exports = {
   entry: {
-    bundle: path.join(__dirname, './src/index.js')
+    bundle: [
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/only-dev-server',
+      path.join(__dirname, './src/index.js')
+    ]
   },
   output: {
     filename: '[name].js',
     path: __dirname
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
   module: {
     loaders: [
       {
@@ -17,8 +27,14 @@ module.exports = {
         exclude: [
           /node_modules/
         ],
-        loader: 'babel-loader'
+        loaders: [
+          'react-hot-loader',
+          'babel-loader'
+        ]
       }
     ]
+  },
+  devServer: {
+    hot: true
   }
 };
