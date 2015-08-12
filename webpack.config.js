@@ -62,7 +62,8 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: __dirname
+    path: __dirname,
+    pathinfo: !isProd
   },
   plugins: plugins,
   module: {
