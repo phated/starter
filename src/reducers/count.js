@@ -7,7 +7,7 @@ const {
 
 const initial = 0;
 
-function example(state = initial, { type }){
+function count(state = initial, { type }){
   switch(type){
     case INCREMENT:
       return (state + 1);
@@ -18,4 +18,4 @@ function example(state = initial, { type }){
   }
 }
 
-module.exports = example;
+module.exports = count;
