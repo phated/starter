@@ -23,7 +23,7 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "@phated/redux-create-store": "^0.1.1",
+    "@phated/redux-create-store": "^0.2.0",
     "react": "^0.13.3",
     "sovereign": "^0.3.0"
   },
@@ -36,6 +36,8 @@
     "flux-standard-action": "^0.6.0",
     "isparta-loader": "^0.2.0",
     "react-hot-loader": "^1.2.8",
+    "redux": "^1.0.0-rc",
+    "redux-devtools": "^1.0.2",
     "webpack": "^1.10.5",
     "webpack-dev-server": "^1.10.1",
     "zuul": "^3.2.0",
