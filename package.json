@@ -20,7 +20,8 @@
     "lint": "eslint ./src/",
     "build": "webpack",
     "serve": "webpack-dev-server",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "docs": "gitbook serve"
   },
   "dependencies": {
     "@phated/redux-create-store": "^0.2.0",
@@ -34,6 +35,7 @@
     "eslint-plugin-react": "^3.1.0",
     "expect": "^1.8.0",
     "flux-standard-action": "^0.6.0",
+    "gitbook-cli": "^0.3.4",
     "isparta-loader": "^0.2.0",
     "react-hot-loader": "^1.2.8",
     "redux": "^1.0.0-rc",

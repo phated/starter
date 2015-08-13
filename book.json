@@ -1,0 +1,15 @@
+{
+  "gitbook": "2.2.x",
+  "structure": {
+    "summary": "docs/README.md"
+  },
+  "links": {
+    "sharing": {
+      "google": false,
+      "facebook": false,
+      "twitter": false,
+      "weibo": false,
+      "all": false
+    }
+  }
+}
