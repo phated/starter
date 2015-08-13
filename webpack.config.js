@@ -69,6 +69,16 @@ module.exports = {
   module: {
     loaders: loaders
   },
+  resolveLoader: {
+    // this is a workaround for loaders being applied
+    // to linked modules
+    root: path.join(__dirname, 'node_modules')
+  },
+  resolve: {
+    // this is a workaround for aliasing a top level dependency
+    // inside a symlinked subdependency
+    root: path.join(__dirname, 'node_modules')
+  },
   devServer: {
     hot: true
   }
